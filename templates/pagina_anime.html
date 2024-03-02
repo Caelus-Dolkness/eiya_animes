@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/faa3c30f58.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/pagina_anime.css') }}">
+    <title>{{titulo}} | Eiya Animes</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/"><img id="logo" src="{{ url_for('static', filename='img/logo.png')}}" alt="logo"></a></li>
+                
+                <li class="dropdown">
+                    <a href="#">Animes <i class="fa-solid fa-caret-down"></i></a>
+                    <div class="dropdown-content-anime">
+                        <ul>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Finalizados</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Top Animes</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Legendado</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Dublado</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Calendário</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Gênero <i class="fa-solid fa-caret-down"></i></a>
+                    <div class="dropdown-content-generos">
+                        <ul class="genero">
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Shounen</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Shoujo</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Seinen</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Josei</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Isekai</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Mecha</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Slice of Life</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Iyashikei</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Ação</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Aventura</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Comédia</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Drama</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Mistério</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Romance</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Sci-Fi</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Terror</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Artes marciais</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Yaoi</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Yuri</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Esporte</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Magia</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Música</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Psicológico</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Sobrenatural</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Super Poderes</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Escolar</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Ecchi</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Harém</a></li>
+                            <li><a href="#" class="itens-lista"><i class="fa-solid fa-caret-right"></i> Hentai</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li id="li-search">
+                    <div id="search">
+                        <input type="text" placeholder="Buscar anime">
+                        <a href="#"><i class="fa-solid fa-magnifying-glass" style="color: blueviolet;"></i></a>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="/login"><i class="fa-solid fa-user"></i></a>
+                    <a id="button-login-cadastro" href='/cadastro'><i class="fa-solid fa-user-plus"></i></a>
+                </li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="fundo-branco">
+            <div id="navio">
+                <div class="parte_superior">
+                    <div class="div_logo_anime"><img id="logo_anime" src="{{ url_for('static', filename='img/garoto_sorridente.jpg')}}" alt="logo_anime"></div>
+                    <div class="descricao">
+                        <h1 id="titulo">Tílulo</h1>
+                        <div id="div_genero">
+                            <nav>
+                                <ul id="lista-genero">
+                                    <li><a href="#" class="itens-lista-genero">Shounen</a></li>
+                                    <li><a href="#" class="itens-lista-genero">Ação</a></li>
+                                    <li><a href="#" class="itens-lista-genero">Aventura</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="episodios-info-trailer">
+                    <ul id="lista-ep_info_trailer">
+                        <li><button type="button" class="itens-lista-ep_info_trailer" id="ep_click" onclick="troca_ep_info_trailer('ep')">Episódios</button type="button"></li>
+                        <li><button type="button" class="itens-lista-ep_info_trailer" id="desc" onclick="troca_ep_info_trailer('desc')">Informações</button type="button"></li>
+                        <li><button type="button" class="itens-lista-ep_info_trailer" id="trai" onclick="troca_ep_info_trailer('trai')">Trailer</button type="button"></li>
+                    </ul>
+                </div>
+
+                <div id="parte_inferior">
+
+                    <div id="episodios">
+                        <nav>
+                            <ul class="lista-episodios">
+                                <li class="itens-lista-episodios">
+                                    <div><img src="{{ url_for('static', filename = '/img/fantasmas.png') }}" alt="historico" class="img_capitulo"></div>
+                                    <div>
+                                        <a href="#">Titúlo</a>
+                                        <span class="date">19/09/2056</span>
+                                    </div>
+                                </li>
+                                <li class="itens-lista-episodios">
+                                    <div><img src="{{ url_for('static', filename = '/img/fantasmas.png') }}" alt="historico" class="img_capitulo"></div>
+                                    <div>
+                                        <a href="#">Titúlo</a>
+                                        <span class="date">19/09/2056</span>
+                                    </div>
+                                </li>
+                                <li class="itens-lista-episodios">
+                                    <div><img src="{{ url_for('static', filename = '/img/fantasmas.png') }}" alt="historico" class="img_capitulo"></div>
+                                    <div>
+                                        <a href="#">Titúlo</a>
+                                        <span class="date">19/09/2056</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    
+
+                    <div id="descricao">
+                        <h1>Sinopse</h1>
+                        <p>Descrição</p>
+                    </div>
+
+
+
+                    <div id="trailer">
+                        <div class="video">
+                            <h1>Video Trailer</h1>
+                            <video controls>
+                                <source src="" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+</body>
+</html>

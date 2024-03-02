@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/pagina_adm.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Novo anime / capítulo | Eiya Animes</title>
+</head>
+<body>
+    <header>
+        <a href="/"><img id="logo" src="{{ url_for('static', filename='img/logo.png')}}" alt="logo"></a>
+    </header>
+
+    <main>
+        <div id="fundo-branco">
+            <h1>Novo Anime</h1>
+            <div id="novo_anime">
+                <div class="campo">
+                    <input class="escrever" id="nome_anime" type="text" placeholder="Nome do Anime" name="nome_anime">
+                </div>
+                <div class="campo">
+                    <label for="logo_anime">Logo do Anime: </label>
+                    <input id="logo_anime" type="file" name="logo_anime">
+                </div>
+                <div class="campo">
+                    <label for="trailer_anime">Trailer do Anime: </label>
+                    <input id="trailer_anime" type="file" name="trailer_anime">
+                </div>
+                <div class="campo">
+                    <h3>Gêneros</h3>
+                    <ul class="campo_generos">
+                        <li><input class="genero" id="acao" type="checkbox" name="acao"><label for="acao"> Ação</label></li>
+                        <li><input class="genero" id="artes_marciais" type="checkbox" name="artes_marciais"><label for="artes_marciais"> Artes Marciais</label></li>
+                        <li><input class="genero" id="aventura" type="checkbox" name="aventura"><label for="aventura"> Aventura</label></li>
+                        <li><input class="genero" id="comedia" type="checkbox" name="comedia"><label for="comedia"> Comédia</label></li>
+                        <li><input class="genero" id="drama" type="checkbox" name="drama"><label for="drama"> Drama</label></li>
+                        <li><input class="genero" id="escolar" type="checkbox" name="escolar"><label for="escolar"> Escolar</label></li>
+                        <li><input class="genero" id="esporte" type="checkbox" name="esporte"><label for="esporte"> Esporte</label></li>
+                        <li><input class="genero" id="ecchi" type="checkbox" name="ecchi"><label for="ecchi"> Ecchi</label></li>
+                        <li><input class="genero" id="harem" type="checkbox" name="harem"><label for="harem"> Harém</label></li>
+                        <li><input class="genero" id="hentai" type="checkbox" name="hentai"><label for="hentai"> Hentai</label></li>
+                        <li><input class="genero" id="isekai" type="checkbox" name="isekai"><label for="isekai"> Isekai</label></li>
+                        <li><input class="genero" id="iyashikei" type="checkbox" name="iyashikei"><label for="iyashikei"> Iyashikei</label></li>
+                        <li><input class="genero" id="josei" type="checkbox" name="josei"><label for="josei"> Josei</label></li>
+                        <li><input class="genero" id="Magia" type="checkbox" name="Magia"><label for="Magia"> Magia</label></li>
+                        <li><input class="genero" id="mecah" type="checkbox" name="mecah"><label for="mecah"> Mecha</label></li>
+                        <li><input class="genero" id="misterio" type="checkbox" name="misterio"><label for="misterio"> Mistério</label></li>
+                        <li><input class="genero" id="musica" type="checkbox" name="musica"><label for="musica"> Música</label></li>
+                        <li><input class="genero" id="psicologico" type="checkbox" name="psicologico"><label for="psicologico"> Psicológico</label></li>
+                        <li><input class="genero" id="romance" type="checkbox" name="romance"><label for="romance"> Romance</label></li>
+                        <li><input class="genero" id="sci_fi" type="checkbox" name="sci_fi"><label for="sci_fi"> Sci-Fi</label></li>
+                        <li><input class="genero" id="seinen" type="checkbox" name="seinen"><label for="seinen"> Seinen</label></li>
+                        <li><input class="genero" id="shoujo" type="checkbox" name="shoujo"><label for="shoujo"> Shoujo</label></li>
+                        <li><input class="genero" id="shounen" type="checkbox" name="shounen"><label for="shounen"> Shounen</label></li>
+                        <li><input class="genero" id="slice_of_life" type="checkbox" name="slice_of_life"><label for="slice_of_life"> Slice of Life</label></li>
+                        <li><input class="genero" id="sobrenatural" type="checkbox" name="sobrenatural"><label for="sobrenatural"> Sobrenatural</label></li>
+                        <li><input class="genero" id="super_poderes" type="checkbox" name="super_poderes"><label for="super_poderes"> Super Poderes</label></li>
+                        <li><input class="genero" id="terro" type="checkbox" name="terro"><label for="terro"> Terror</label></li>
+                        <li><input class="genero" id="yaoi" type="checkbox" name="yaoi"><label for="yaoi"> Yaoi</label></li>
+                        <li><input class="genero" id="yuri" type="checkbox" name="yuri"><label for="yuri"> Yuri</label></li>
+                    </ul>
+                </div>
+                <div class="campo">
+                    <input class="escrever" id="descricao" type="text" placeholder="Descrição" name="descricao">
+                </div>
+                <div class="campo">
+                    <input class="submit" type="submit" value="Enviar" name="novo_anime" id="button_anime">
+                </div>
+            </div>
+            
+            <h1>Nova Temporada</h1>
+            <div id="nova_temporada">
+                <div class="campo">
+                    <input id="id_temporada" type="number" placeholder="Temporada...">
+                </div>
+                <div class="campo">
+                    <input class="escrever" id="anime_que_temporada_pertencente" type="text" placeholder="Essa temporada pertence ao anime...">
+                </div>
+            </div>
+
+
+            <h1>Novo Capítulo</h1>
+            <div id="novo_capitulo">
+                <div class="campo">
+                    <input class="escrever" id="anime_que_capitulo_pertencente" type="text" placeholder="Selecionar Anime" name="anime_que_capitulo_pertencente">
+                </div>
+                <div class="campo">
+                    <label for="video_capitulo">Videos do Capítulo: </label>
+                    <input id="video_capitulo" type="file" name="video_capitulo">
+                </div>
+                <div class="campo">
+                    <label for="thumbnail">Imagem do Capítulo: </label>
+                    <input id="thumbnail" type="file" name="thumbnail">
+                </div>
+                <div class="campo">
+                    <input class="submit" type="submit" value="Enviar" name="novo_capitulo" id="button_capitulo">
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+</body>
+
+</html>
