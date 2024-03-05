@@ -11,12 +11,11 @@ console.log(url_anime)
 botao = document.getElementById('button_anime');
 botao.addEventListener('click',function () {
 
-    nome_anime = document.getElementById('nome_anime').value
-    logo_anime = document.getElementById('logo_anime').value
-    trailer_anime = document.getElementById('trailer_anime').value
-    descricao = document.getElementById('descricao').value
-    
-    Anime = {'tipoCadastro':'Anime','nome_anime':nome_anime,'logo_anime':logo_anime,'trailer_anime':trailer_anime,'descricao':descricao}
+    nomeAnime = document.getElementById('nome_anime').value;
+    logoAnime = document.getElementById('logo_anime').value;
+    geneross = document.getElementById('generos').value;
+    descricaoAnime = document.getElementById('descricao').value;
+    Anime = {'tipoCadastro':'Anime','nomeAnime':nomeAnime,'logoAnime':logoAnime,'geneross':geneross,'descricaoAnime':descricaoAnime}
     
     axios.post(url_anime, Anime)
     .then(function(response){
@@ -30,7 +29,7 @@ botao.addEventListener('click',function () {
 })
 
 
-//page anime
+
 function troca_ep_info_trailer(tipo){
     console.log(tipo)
     const ep = document.getElementById("ep");

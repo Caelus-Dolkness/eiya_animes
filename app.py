@@ -1,14 +1,14 @@
+import os
 import json
 import pyodbc
  
-#print(pyodbc.drivers())
-#def conecta_ao_banco(driver,server,database):
-#    string_conexao = f"DRIVER={driver};SERVER={server};DATABASE={database}"
-#    return pyodbc.connect(string_conexao)
-#
-#conexao = conecta_ao_banco('SQL Server','DESKTOP-KK046J1\SQLEXPRESS','eiya_animes')
-#print('Conexão bem sucedida')
+print(pyodbc.drivers())
+def conecta_ao_banco(driver,server,database):
+    string_conexao = f"DRIVER={driver};SERVER={server};DATABASE={database}"
+    return pyodbc.connect(string_conexao)
 
+#conexao = conecta_ao_banco('SQL Server','DESKTOP-306QNCK\SQLEXPRESS','eiya_animes')
+#print('Conexão bem sucedida')
 #comando = conexao.cursor()
 #comando.execute('create table teste(id_teste int)')
 #comando.commit()
@@ -19,6 +19,7 @@ import pyodbc
 from flask import Flask, redirect, url_for, render_template, request
 app = Flask(__name__)
 
+
 @app.route('/')
 def home():
     return render_template('pagina_inicial.html')
@@ -27,29 +28,25 @@ def home():
 def historico():
     return render_template('pagina_historico.html')
 
-
+@app.route('/erro')
+def erro():
+    return "Usuário já existente"
 
 @app.route('/adm', methods=['GET', 'POST'])
 def adm():
+  
     print('Ola')
+
     if request.method == 'POST':
         print('Entrou')
         req = request.get_json()
-        print (req)
-
-        if req['tipoCadastro'] == 'Anime':
-            return req['nome_anime']
         
-
+        if req['tipoCadastro'] == 'Anime':
+            
+            return req
     else:
         print('Fora')
         return render_template('pagina_adm.html')
-    
-
-@app.route('/anime')
-def pagina_anime():
-    return render_template('pagina_anime.html')
-
 
 #        if tipo == 'novo_anime':
 #            nome_anime = request.form['nome_anime']
@@ -79,7 +76,17 @@ def pagina_anime():
 #                "video_capitulo":video_capitulo,
 #                "thumbnail":thumbnail
 #            }
-#            return json.dumps(novo_capitulo)        
+#            return json.dumps(novo_capitulo)
+    
+
+
+
+@app.route('/anime')
+def pagina_anime():
+    return render_template('pagina_anime.html')
+
+
+        
 
         
 #

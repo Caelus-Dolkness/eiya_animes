@@ -35,38 +35,20 @@ main{
 #fundo-branco{
     grid-column: 2;
     padding: 50px 20px;
-    background: #aaaaaaf4;
+    background: #0e011ef4;
     height: 100%;
 }
 
 #fundo-branco h1{
     font-family: 'Libre Baskerville', serif;
-    color: #2d082f;
+    color: #d8d8d8;
     padding: 10px;
     border-left: 2px solid blueviolet;
 }
 
 .campo{
+    display: block;
     margin: 10px 30px;
-}
-
-.escrever{
-    width: 70%;
-}
-
-.campo h3{
-    padding: 10px;
-    color: #2d082f;
-}
-
-.campo_generos{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    list-style-type: none;
-}
-
-.campo_generos li{
-    padding: 5px 0px;
 }
 
 #novo_anime{
@@ -82,10 +64,9 @@ main{
     border-radius: 3px;
     border: none;
     cursor: pointer;
-    color: #2d082f;
-    width: 10%;
+    color: #d8d8d8;
 }
 
 #fundo-branco label{
-    color: #2d082f;
+    color: #d8d8d8;
 }
