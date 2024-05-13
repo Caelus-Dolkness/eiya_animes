@@ -99,7 +99,7 @@ def adicionar_genero_bancoDados(nome_genero):
     print('Sucesso ao adicionar um novo GENERO')
 
 def pega_nomeAnime_logoAnime_descricao_tabelaAnimes(id_anime):
-    animes = cursor.execute(f'select nome_anime,logo_anime,descricao from animes where id_anime = {id_anime} ').fetchall()
+    animes = cursor.execute(f"select nome_anime,logo_anime,descricao from animes where id_anime = {id_anime}").fetchall()
     animes = [tuple(row) for row in animes]
     return animes
 
@@ -212,3 +212,9 @@ def pesquisa_anime_que_capitulo_pertencente(conteudo):
     resultado = cursor.execute(f"select id_anime,nome_anime from animes where nome_anime like '%{conteudo}%' or id_anime like '{conteudo}%' ").fetchall()
     resultado = [tuple(row) for row in resultado]
     return resultado
+
+def buscaTrailer(id_anime):
+    resultado = cursor.execute(f"select id_temporada,trailer from trailers where id_anime = {id_anime}").fetchall()
+    resultado = [tuple(row) for row in resultado]
+    return resultado
+

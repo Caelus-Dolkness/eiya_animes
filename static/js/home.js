@@ -33,7 +33,7 @@ axios.get('/retornaAnimes_e_Capitulos')
     fundo2.appendChild(div);
   
     let link1 = document.createElement("a");
-    link1.setAttribute("href",'/animes-'+ element[0]+"/tem-"+element[1]+'/cap-'+ element[2])
+    link1.setAttribute("href","/animes-"+ element[0]+"/tem-"+element[1]+"/cap-"+ element[2])
 
     let img = document.createElement("img");
     img.setAttribute("src",element[4]);
@@ -43,7 +43,7 @@ axios.get('/retornaAnimes_e_Capitulos')
     div.appendChild(link1);
 
     let link2 = document.createElement("a");
-    link2.setAttribute("href",'/animes/'+ element[0] +'/cap-'+ element[2]);
+    link2.setAttribute("href","/animes-"+ element[0]+"/tem-"+element[1]+"/cap-"+ element[2]);
     nome_anime = document.createTextNode(element[5]);
     link2.appendChild(nome_anime);
     div.appendChild(link2);

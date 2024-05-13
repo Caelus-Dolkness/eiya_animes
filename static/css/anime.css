@@ -171,12 +171,16 @@ main{
     margin-top: 20px;
 }
 
+#trailer .video p {
+    padding-bottom: 10px;
+}
+
 #trailer .video{
     text-align: center;
     align-items: center;
 }
 
-#trailer video{
+#trailer iframe{
     max-width: 80%;
 }
 

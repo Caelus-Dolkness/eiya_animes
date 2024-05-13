@@ -101,6 +101,7 @@ def anime(id_anime):
 
     CAnime = {}
     animes = bancoDados.pega_nomeAnime_logoAnime_descricao_tabelaAnimes(id_anime)
+    print(animes)
     CAnime['NomeAnime'] = animes[0][0]
     CAnime['logo_anime'] = animes[0][1]
     CAnime['descricao'] = animes[0][2]
@@ -109,7 +110,9 @@ def anime(id_anime):
     capitulos = bancoDados.pega_idCapitulos_dataLancamento_capitulo_tabelaCapitulos(id_anime)
     ligacao_anime_genero = bancoDados.pega_ligacaoAnime_genero(id_anime)
     quant_temporadas = bancoDados.quantidade_temporadas(id_anime)
-    return render_template('anime.html', anime = CAnime,capitulos = capitulos,generos = generos,ligacao_anime_genero = ligacao_anime_genero,temporadas = quant_temporadas)
+    trailers = bancoDados.buscaTrailer(id_anime)
+
+    return render_template('anime.html', anime = CAnime,capitulos = capitulos,generos = generos,ligacao_anime_genero = ligacao_anime_genero,temporadas = quant_temporadas, trailers=trailers)
 
 @app.route('/animes-<id_anime>/tem-<id_temporada>/cap-<id_capitulo>')
 def page_assistir_cap(id_anime,id_temporada,id_capitulo):

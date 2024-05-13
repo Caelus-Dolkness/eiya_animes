@@ -34,7 +34,7 @@
         <ul id="lista-ep_info_trailer">
             <li><button type="button" class="itens-lista-ep_info_trailer" id="ep_click" onclick="troca_ep_info_trailer('ep')">Episódios</button type="button"></li>
             <li><button type="button" class="itens-lista-ep_info_trailer" id="desc" onclick="troca_ep_info_trailer('desc')">Informações</button type="button"></li>
-            <li style="display: none;"><button type="button" class="itens-lista-ep_info_trailer" id="trai" onclick="troca_ep_info_trailer('trai')">Trailer</button type="button"></li>
+            <li><button type="button" class="itens-lista-ep_info_trailer" id="trai" onclick="troca_ep_info_trailer('trai')">Trailer</button type="button"></li>
         </ul>
     </div>
 
@@ -76,7 +76,10 @@
         <div id="trailer">
             <div class="video">
                 <h1>Video Trailer</h1>
-                <iframe src="https://www.youtube.com/watch?v=9DMBHqK8Xks" title="Trailer"></iframe>
+                {% for i in trailers %}
+                <p>Temporada {{i[0]}}</p>
+                <iframe src={{i[1]}} title="trailer"></iframe>
+                {% endfor %}
             </div>
         </div>
     </div>
