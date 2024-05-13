@@ -61,9 +61,10 @@ document.getElementById('button_temporada').addEventListener('click', function (
     anime_que_temporada_pertencente = document.getElementById('anime_que_temporada_pertencente').value;
     num_temporada = document.getElementById('num_temporada').value;
     data_lancamento_temporada = document.getElementById('data_lancamento_temporada').value;
+    trailer_temporada = document.getElementById('trailer_temporada').value;
 
     Temporada = {'tipoCadastro':'Temporada','anime_que_temporada_pertencente':anime_que_temporada_pertencente,
-    'num_temporada':num_temporada,'data_lancamento_temporada':data_lancamento_temporada}
+    'num_temporada':num_temporada,'data_lancamento_temporada':data_lancamento_temporada,'trailer_temporada':trailer_temporada}
 
     axios.post(url_adm, Temporada)
     .then(function(response){

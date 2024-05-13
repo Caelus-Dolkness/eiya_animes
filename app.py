@@ -84,7 +84,7 @@ def adm():
                 return req['tipoCadastro']
             
             elif req['tipoCadastro'] == 'Temporada':
-                bancoDados.adicionar_temporada_bancoDados(req['anime_que_temporada_pertencente'],req['num_temporada'],req['data_lancamento_temporada'])
+                bancoDados.adicionar_temporada_bancoDados(req['anime_que_temporada_pertencente'],req['num_temporada'],req['data_lancamento_temporada'],req['trailer_temporada'])
                 return req['tipoCadastro']
             
             else:

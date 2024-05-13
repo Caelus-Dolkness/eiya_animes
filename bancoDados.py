@@ -84,10 +84,12 @@ def adiciona_capitulo_bancoDados(anime_que_capitulo_pertencente,temporada_que_ca
     cursor.commit()
     print('Sucesso ao adicianor o CAPITULO')
 
-def adicionar_temporada_bancoDados(anime_que_temporada_pertencente,num_temporada,data_lancamento_temporada):
+def adicionar_temporada_bancoDados(anime_que_temporada_pertencente,num_temporada,data_lancamento_temporada,trailer):
     id_temporada = proximo_id('temporadas')
     print(data_lancamento_temporada)
     cursor.execute(f"insert into temporadas values({anime_que_temporada_pertencente},{num_temporada},'{data_lancamento_temporada}',{id_temporada})")
+    cursor.commit()
+    cursor.execute(f"insert into trailers values({anime_que_temporada_pertencente},'{trailer}',{num_temporada})")
     cursor.commit()
     print('Sucesso ao adicionar uma nova TEMPORADA')
 

@@ -65,7 +65,7 @@ ValorFavoritar = {'key':salvar_anime, 'id_anime':parseInt(span_id_anime)}
 
 axios.post('/verifica_favoritos', ValorFavoritar)
 .then(function(response){
-console.log(response.data);
+//console.log(response.data);
 if (response.data === "True") {
     salvar_anime = document.getElementById('anime_salvo').checked = true;
 } else {
